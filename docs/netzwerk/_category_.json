@@ -1,0 +1,8 @@
+{
+  "label": "Netzwerk",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Werkzeuge zur Analyse von Netzwerkverbindungen, IP-Konfigurationen und Fernzugriff via SSH."
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "label": "Dateisystem",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Befehle zur Verwaltung von Dateien und Ordnern."
+  }
+}
