@@ -20,26 +20,25 @@ Stellen Sie sicher, dass `bun` (oder alternativ `npm`) auf dem System installier
 
 ### Installationsschritte
 1. **Repository klonen:**
-   BACKTICKSbash
+   ```bash
    git clone https://github.com/joel-furrer/linux-guide.git
    cd linux-guide
-   BACKTICKS
+   ```
 
 2. **Abhängigkeiten installieren:**
-   BACKTICKSbash
+   ```bash
    bun install
-   BACKTICKS
+   ```
 
 3. **Entwicklungsserver starten:**
-   BACKTICKSbash
+   ```bash
    bun start
-   BACKTICKS
+   ```
    Die Dokumentation ist anschließend unter `http://localhost:3000` verfügbar.
 
 ## Projektstruktur
 
 * `docs/`: Markdown-Dateien der Dokumentation, unterteilt in thematische Kategorien.
-* `i18n/`: Konfigurationsdateien für die Internationalisierung (Deutsch/Englisch).
 * `src/`: Quellcode für Custom Components und das Seitenlayout.
 * `static/`: Statische Assets wie Grafiken, Favicons und Logos.
 
