@@ -1,26 +1,113 @@
+/**
+ * MODERN TECH ELEGANCE
+ * Fokus: Tiefe, Glas-Effekte und Präzision.
+ */
+
 :root {
-  --ifm-color-primary: #79740e;
-  --ifm-color-primary-dark: #645f0b;
-  --ifm-color-primary-darker: #5b570a;
-  --ifm-color-primary-darkest: #4b4808;
-  --ifm-color-primary-light: #8e8910;
-  --ifm-color-primary-lighter: #989311;
-  --ifm-color-primary-lightest: #b5b014;
-  --ifm-background-color: #fbf1c7;
-  --ifm-font-color-base: #3c3836;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(60, 56, 54, 0.1);
+  /* --- LIGHT MODE (Clean & Airy) --- */
+  --ifm-color-primary: #3b82f6; /* Modern Blue / Indigo */
+  --ifm-color-primary-dark: #2563eb;
+  --ifm-color-primary-darker: #1d4ed8;
+  --ifm-color-primary-darkest: #1e3a8a;
+  --ifm-color-primary-light: #60a5fa;
+  --ifm-color-primary-lighter: #93c5fd;
+  --ifm-color-primary-lightest: #dbeafe;
+
+  --ifm-background-color: #ffffff;
+  --ifm-background-surface-color: #f8fafc;
+  --ifm-navbar-background-color: rgba(255, 255, 255, 0.8);
+  
+  --ifm-font-color-base: #1e293b;
+  --ifm-heading-color: #0f172a;
+  
+  --ifm-card-border-radius: 10px;
+  --ifm-code-font-size: 85%;
+  --docusaurus-highlighted-code-line-bg: rgba(59, 130, 246, 0.1);
 }
 
 [data-theme='dark'] {
-  --ifm-color-primary: #8ec07c;
-  --ifm-color-primary-dark: #7db467;
-  --ifm-color-primary-darker: #74ad5c;
-  --ifm-color-primary-darkest: #608f4c;
-  --ifm-color-primary-light: #9fcc91;
-  --ifm-color-primary-lighter: #a7d29c;
-  --ifm-color-primary-lightest: #beddbb;
-  --ifm-background-color: #282828;
-  --ifm-font-color-base: #ebdbb2;
-  --docusaurus-highlighted-code-line-bg: rgba(235, 219, 178, 0.15);
+  /* --- DARK MODE (Deep Slate & Glow) --- */
+  --ifm-color-primary: #6366f1; /* Indigo Glow */
+  --ifm-color-primary-dark: #4f46e5;
+  --ifm-color-primary-darker: #4338ca;
+  --ifm-color-primary-darkest: #312e81;
+  --ifm-color-primary-light: #818cf8;
+  --ifm-color-primary-lighter: #a5b4fc;
+  --ifm-color-primary-lightest: #c7d2fe;
+
+  /* Ein sehr tiefes Anthrazit-Blau statt reinem Schwarz */
+  --ifm-background-color: #0b0f1a; 
+  --ifm-background-surface-color: #161b2a;
+  --ifm-navbar-background-color: rgba(11, 15, 26, 0.8);
+  
+  --ifm-font-color-base: #cbd5e1;
+  --ifm-heading-color: #f8fafc;
+  
+  --docusaurus-highlighted-code-line-bg: rgba(99, 102, 241, 0.2);
+}
+
+/* --- ELEGANT TECH FINISH --- */
+
+/* Glassmorphism Navbar */
+.navbar {
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+[data-theme='dark'] .navbar {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Sidebar - minimalistisch und sauber */
+.menu {
+  background: transparent;
+  font-weight: 500;
+}
+
+.menu__link {
+  border-radius: 6px;
+  margin-bottom: 2px;
+  transition: all 0.2s;
+}
+
+.menu__link--active {
+  background-color: rgba(99, 102, 241, 0.1) !important;
+  color: var(--ifm-color-primary) !important;
+  border-left: 3px solid var(--ifm-color-primary);
+  border-radius: 0 6px 6px 0;
+}
+
+/* Cards mit Tech-Glow Effekt */
+.card {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  background: var(--ifm-background-surface-color);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+[data-theme='dark'] .card {
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  border-color: var(--ifm-color-primary);
+}
+
+/* Scrollbar Verschönerung (Webkit) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ifm-color-primary);
 }
