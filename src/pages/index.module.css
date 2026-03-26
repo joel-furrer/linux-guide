@@ -1,7 +1,17 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
+.mainContent {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.mainContent h2 {
+  margin-bottom: 1.5rem;
+}
+
+.mainContent p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--ifm-color-emphasis-700);
+}
 
 .heroBanner {
   padding: 4rem 0;
