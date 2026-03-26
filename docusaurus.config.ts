@@ -8,7 +8,7 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   url: 'https://joel-furrer.github.io', 
-  baseUrl: '/', 
+  baseUrl: '/linux-guide/', 
 
   organizationName: 'joel-furrer', 
   projectName: 'linux-guide', 
