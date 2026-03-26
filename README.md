@@ -1,41 +1,71 @@
-# Website
+# Linux Guide und Terminal Fundamentals
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+Ein strukturierter Leitfaden für die effiziente Nutzung der Linux-Kommandozeile. Dieses Projekt basiert auf den Lerninhalten des Moduls 305 und bietet eine technische Dokumentation der wichtigsten Befehle, Workflows und Werkzeuge wie Git und Neovim.
 
-## Installation
+## Übersicht
 
-```bash
-yarn
-```
+Dieses Projekt ist eine interaktive Dokumentation, erstellt mit Docusaurus. Es dient als zentrale Wissensdatenbank für folgende Themenbereiche:
 
-## Local Development
+* **Dateisystem-Operationen:** Navigation, Manipulation und Verwaltung von Verzeichnisstrukturen.
+* **System-Administration:** Verwaltung von Benutzerrechten, Umgebungsvariablen und Prozessen.
+* **Textverarbeitung:** Einsatz von Filtern, Streams, Pipes und Editoren.
+* **Versionsverwaltung und Editoren:** Grundlagen von Git sowie die Konfiguration von Neovim.
 
-```bash
-yarn start
-```
+## Installation und lokale Entwicklung
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+Das Projekt nutzt Bun als Runtime und Paketmanager. Für Nutzer von NixOS ist eine entsprechende Flake-Konfiguration vorhanden.
 
-## Build
+### Voraussetzungen
+Stellen Sie sicher, dass `bun` (oder alternativ `npm`) auf dem System installiert ist.
 
-```bash
-yarn build
-```
+### Installationsschritte
+1. **Repository klonen:**
+   BACKTICKSbash
+   git clone https://github.com/joel-furrer/linux-guide.git
+   cd linux-guide
+   BACKTICKS
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+2. **Abhängigkeiten installieren:**
+   BACKTICKSbash
+   bun install
+   BACKTICKS
 
-## Deployment
+3. **Entwicklungsserver starten:**
+   BACKTICKSbash
+   bun start
+   BACKTICKS
+   Die Dokumentation ist anschließend unter `http://localhost:3000` verfügbar.
 
-Using SSH:
+## Projektstruktur
 
-```bash
-USE_SSH=true yarn deploy
-```
+* `docs/`: Markdown-Dateien der Dokumentation, unterteilt in thematische Kategorien.
+* `i18n/`: Konfigurationsdateien für die Internationalisierung (Deutsch/Englisch).
+* `src/`: Quellcode für Custom Components und das Seitenlayout.
+* `static/`: Statische Assets wie Grafiken, Favicons und Logos.
 
-Not using SSH:
+## Inhaltliche Schwerpunkte (Modul 305)
 
-```bash
-GIT_USER=<Your GitHub username> yarn deploy
-```
+Der Guide behandelt unter anderem folgende technische Aspekte:
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+* **Navigation:** `pwd`, `ls`, `cd`, `mkdir`, `touch`.
+* **Dateimanagement:** `cp`, `mv`, `rm`, `find`.
+* **Berechtigungen:** `sudo`, `chown`, `chmod`, `/etc/shadow`.
+* **Umgebungskonfiguration:** `export`, `PATH`, `alias`.
+* **Textanalyse:** `grep`, `sort`, `cut`, `cat`, `less`.
+* **Datenströme:** Standard-Streams (STDIN/OUT/ERR) und Verkettung mittels `|`.
+
+## Technischer Stack
+
+* **Framework:** Docusaurus v3 (React-basiert)
+* **Runtime:** Bun
+* **Programmiersprache:** TypeScript
+* **Styling:** CSS Modules
+* **Deployment:** GitHub Pages
+
+## Autor
+
+**Joel Furrer**
+* GitHub: [joel-furrer](https://github.com/joel-furrer)
+
+---
+*Diese Dokumentation wurde für Ausbildungszwecke erstellt und wird kontinuierlich gepflegt.*
