@@ -1,11 +1,5 @@
-/**
- * MODERN TECH ELEGANCE
- * Fokus: Tiefe, Glas-Effekte und Präzision.
- */
-
 :root {
-  /* --- LIGHT MODE (Clean & Airy) --- */
-  --ifm-color-primary: #3b82f6; /* Modern Blue / Indigo */
+  --ifm-color-primary: #3b82f6;
   --ifm-color-primary-dark: #2563eb;
   --ifm-color-primary-darker: #1d4ed8;
   --ifm-color-primary-darkest: #1e3a8a;
@@ -26,8 +20,7 @@
 }
 
 [data-theme='dark'] {
-  /* --- DARK MODE (Deep Slate & Glow) --- */
-  --ifm-color-primary: #6366f1; /* Indigo Glow */
+  --ifm-color-primary: #6366f1;
   --ifm-color-primary-dark: #4f46e5;
   --ifm-color-primary-darker: #4338ca;
   --ifm-color-primary-darkest: #312e81;
@@ -35,7 +28,6 @@
   --ifm-color-primary-lighter: #a5b4fc;
   --ifm-color-primary-lightest: #c7d2fe;
 
-  /* Ein sehr tiefes Anthrazit-Blau statt reinem Schwarz */
   --ifm-background-color: #0b0f1a; 
   --ifm-background-surface-color: #161b2a;
   --ifm-navbar-background-color: rgba(11, 15, 26, 0.8);
@@ -46,9 +38,6 @@
   --docusaurus-highlighted-code-line-bg: rgba(99, 102, 241, 0.2);
 }
 
-/* --- ELEGANT TECH FINISH --- */
-
-/* Glassmorphism Navbar */
 .navbar {
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
@@ -60,7 +49,6 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Sidebar - minimalistisch und sauber */
 .menu {
   background: transparent;
   font-weight: 500;
@@ -79,7 +67,6 @@
   border-radius: 0 6px 6px 0;
 }
 
-/* Cards mit Tech-Glow Effekt */
 .card {
   border: 1px solid rgba(0, 0, 0, 0.05);
   background: var(--ifm-background-surface-color);
@@ -97,7 +84,6 @@
   border-color: var(--ifm-color-primary);
 }
 
-/* Scrollbar Verschönerung (Webkit) */
 ::-webkit-scrollbar {
   width: 8px;
 }
