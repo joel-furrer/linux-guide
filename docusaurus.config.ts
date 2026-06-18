@@ -4,21 +4,21 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Linux Guide',
-  tagline: 'Die wichtigsten Befehle & Tipps im Überblick',
+  tagline: 'An overview of the most important commands & tips',
   favicon: 'img/favicon.ico',
 
-  url: 'https://joel-furrer.github.io', 
-  baseUrl: '/linux-guide/', 
+  url: 'https://joel-furrer.github.io',
+  baseUrl: '/linux-guide/',
 
-  organizationName: 'joel-furrer', 
-  projectName: 'linux-guide', 
+  organizationName: 'joel-furrer',
+  projectName: 'linux-guide',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
   i18n: {
-    defaultLocale: 'de',
-    locales: ['de'],
+    defaultLocale: 'en',
+    locales: ['en'],
   },
 
   presets: [
@@ -55,7 +55,7 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Befehle',
+          label: 'Commands',
         },
         {
           href: 'https://github.com/joel-furrer/linux-guide',
@@ -71,7 +71,7 @@ const config: Config = {
           title: 'Guide',
           items: [
             {
-              label: 'Befehle Übersicht',
+              label: 'Commands Overview',
               to: '/docs/intro',
             },
           ],
@@ -86,7 +86,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Linux Guide. Erstellt von Joel Furrer.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Linux Guide. Created by Joel Furrer & Ramon Rosenberg.`,
     },
     prism: {
       theme: prismThemes.github,
