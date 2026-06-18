@@ -1,7 +1,7 @@
 ---
 title: nixos-rebuild
 sidebar_label: nixos-rebuild
-sidebar_position: 7
+sidebar_position: 5
 ---
 
 # nixos-rebuild
