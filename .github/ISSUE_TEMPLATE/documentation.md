@@ -1,10 +1,18 @@
 ---
-name: Documentation Improvement
-about: Improve existing documentation
+name: New documentation
+about: Add new documentation
 ---
 
-## Page
+## File
 
-## Proposed Changes
+docs/path/to/file.md
 
-## Reason
+## Goal
+
+What should this this page teach
+
+## Acceptance Criteria
+- Content is written in English
+- Terminology follows `project/TERMINONOLGY.md`
+- Admonitions follow `project/ADMONITIONS.md`
+- Structure follows `project/STYLE_GUIDE.md`
