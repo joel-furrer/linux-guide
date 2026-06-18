@@ -1,0 +1,8 @@
+{
+    "label": "Praxisbeispiele",
+    "position": 12,
+    "link": {
+        "type": "generated-index",
+        "description": "Praxisnahe Anwendungsfälle."
+    }
+}
