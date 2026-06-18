@@ -14,21 +14,21 @@ function HomepageHeader() {
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
         <Heading as="h1" className="hero__title">
-          <Translate id="homepage.title" description="Der Haupttitel auf der Startseite">
+          <Translate id="homepage.title" description="The main title on the homepage">
             Linux Guide
           </Translate>
         </Heading>
         <p className="hero__subtitle" style={{ fontFamily: 'monospace', opacity: 0.9 }}>
-          $ <Translate id="homepage.tagline" description="Die Tagline unter dem Titel">
-            Die wichtigsten Befehle und Konzepte im Überblick
+          $ <Translate id="homepage.tagline" description="The tagline below the title">
+            An overview of the most important commands and concepts
           </Translate>
         </p>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro">
-            <Translate id="homepage.buttonText" description="Text des Call-to-Action Buttons">
-              Dokumentation öffnen
+            <Translate id="homepage.buttonText" description="Text of the call-to-action button">
+              Open Documentation
             </Translate>
           </Link>
         </div>
@@ -42,12 +42,12 @@ export default function Home(): JSX.Element {
   return (
     <Layout
       title={translate({
-        message: 'Startseite',
+        message: 'Home',
         id: 'homepage.layout.title',
-        description: 'Der Titel im Browser-Tab für die Startseite',
+        description: 'The title in the browser tab for the homepage',
       })}
       description={translate({
-        message: 'Ein strukturierter Leitfaden für die effiziente Nutzung der Linux-Kommandozeile.',
+        message: 'A structured guide for the efficient use of the Linux command line.',
         id: 'homepage.layout.description',
       })}>
       <HomepageHeader />
@@ -57,14 +57,13 @@ export default function Home(): JSX.Element {
             <div className="row">
               <div className="col col--8 col--offset-2">
                 <Heading as="h2">
-                  <Translate id="homepage.about.title">Fokus auf das Wesentliche</Translate>
+                  <Translate id="homepage.about.title">Focus on the Essentials</Translate>
                 </Heading>
                 <p>
                   <Translate id="homepage.about.text">
-                    Dieser Guide bietet eine präzise Übersicht der wichtigsten Befehle für die 
-                    tägliche Arbeit mit Linux-Systemen. Ziel ist es, Wissen kompakt und 
-                    verständlich zu vermitteln – von grundlegender Dateiverwaltung bis hin zu 
-                    fortgeschrittenen Systemkonfigurationen.
+                    This guide provides a precise overview of the most important commands for
+                    daily work with Linux systems. The goal is to convey knowledge compactly and
+                    understandably – from basic file management to advanced system configurations.
                   </Translate>
                 </p>
               </div>
