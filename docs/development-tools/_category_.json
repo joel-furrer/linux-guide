@@ -1,0 +1,8 @@
+{
+    "label": "Development Tools",
+    "position": 10,
+    "link": {
+        "type": "generated-index",
+        "description": "Tools for development and version control."
+    }
+}

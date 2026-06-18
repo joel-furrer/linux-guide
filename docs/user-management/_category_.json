@@ -1,0 +1,8 @@
+{
+    "label": "User Management",
+    "position": 7,
+    "link": {
+        "type": "generated-index",
+        "description": "Users, groups, and permissions."
+    }
+}

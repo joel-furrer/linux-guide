@@ -1,8 +1,0 @@
-{
-    "label": "Suchen und Filtern",
-    "position": 5,
-    "link": {
-        "type": "generated-index",
-        "description": "Werkzeuge zum Durchsuchen und Filtern von Daten."
-    }
-}
