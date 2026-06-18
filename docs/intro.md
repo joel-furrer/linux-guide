@@ -1,8 +1,8 @@
 ---
-title: Einführung
-sidebar_label: Einführung
+title: Introduction
+sidebar_label: Introduction
 sidebar_position: 1
 ---
 
-# Einführung
+# Introduction
 
