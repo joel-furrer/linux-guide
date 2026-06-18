@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'Linux Guide',
   tagline: 'An overview of the most important commands & tips',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/tux.png',
 
   url: 'https://joel-furrer.github.io',
   baseUrl: '/linux-guide/',
@@ -48,7 +48,7 @@ const config: Config = {
       title: 'Linux Guide',
       logo: {
         alt: 'Linux Guide Logo',
-        src: 'img/logo.svg',
+        src: 'img/tux.png',
       },
       items: [
         {
