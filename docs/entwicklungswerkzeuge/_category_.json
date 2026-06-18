@@ -1,0 +1,8 @@
+{
+    "label": "Entwicklungswerkzeuge",
+    "position": 10,
+    "link": {
+        "type": "generated-index",
+        "description": "Werkzeuge für Entwicklung und Versionskontrolle."
+    }
+}
