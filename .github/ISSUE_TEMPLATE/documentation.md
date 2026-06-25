@@ -13,6 +13,6 @@ What should this this page teach
 
 ## Acceptance Criteria
 - Content is written in English
-- Terminology follows `project/TERMINONOLGY.md`
+- Terminology follows `project/TERMINOLOGY.md`
 - Admonitions follow `project/ADMONITIONS.md`
 - Structure follows `project/STYLE_GUIDE.md`
