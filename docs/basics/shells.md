@@ -4,211 +4,78 @@ sidebar_label: Shells
 sidebar_position: 4
 ---
 
-# Shells
+# What Is a Shell?
 
 ## Overview
 
-A shell is a program that provides a command-line interface (CLI) between a User and the operating system.
+A shell is a program that lets a User interact with an operating system by typing commands. When a User opens a terminal application, the terminal starts a shell, and the shell becomes the interface between the User and the rest of the system.
 
-The shell reads commands entered by the User, interprets them, and starts programs or executes built-in commands.
-
-Common shells on Unix and Linux systems include:
-
-- Bourne Shell (sh)
-- Bourne Again Shell (bash)
-- Korn Shell (ksh)
-- TENEX C Shell (tcsh)
-- Z Shell (zsh)
-- Friendly Interactive Shell (fish)
-
-Most Linux distributions use `bash` or `zsh` as the default shell.
+This page introduces what a shell is and how it relates to the terminal, the User, and the operating system. Detailed shell usage, including builtins, redirection, and scripting, is covered in the Shell section of this documentation.
 
 ## Why It Matters
 
-The shell is one of the most important tools in Unix and Linux systems.
-
-It allows Users to:
-
-- Navigate the file system
-- Manage files and directorys
-- Start and control processes
-- Automate tasks with scripts
-- Manage system resources
-- Combine commands into powerful workflows
-
-Understanding the shell is essential for system administration, software development, and troubleshooting.
-
-:::note
-
-Many administrative and development tasks can be performed faster from the command line than through graphical applications.
-
-:::
+Almost every interaction with a Linux or Unix system, whether performed manually or through automation, passes through a shell at some point. Understanding what a shell is, and how it differs from a terminal, is a necessary foundation before learning how to use one effectively.
 
 ## Concept
 
-The shell acts as an interpreter between the User and the operating system.
+### Shell, Terminal, User, and Operating System
 
-A typical workflow is:
+These four elements work together, but each has a distinct role:
 
-1. The User enters a command.
-2. The shell parses the command.
-3. The shell locates the requested program.
-4. The shell starts a new process when required.
-5. Output is displayed in the terminal.
+- The User is an account identified by a UID. The User is who issues commands.
+- The terminal is the application or device that provides a text-based window for input and output. The terminal itself does not interpret commands.
+- The shell is a Program that reads the commands typed by the User, interprets them, and asks the operating system to carry them out.
+- The operating system manages the system's resources, such as memory, storage, and Processes, and performs the actions the shell requests on the User's behalf.
 
-Example:
+In short, the User types into the terminal, the terminal passes that input to the shell, and the shell communicates with the operating system.
 
-```bash
-pwd
-```
+### Terminal vs Shell
 
-The shell executes the `pwd` program and displays the current working directory.
+The terminal and the shell are often confused, but they are not the same thing.
 
-### Shell Components
+- The terminal is a window or device that displays text and accepts keyboard input.
+- The shell is the Program running inside the terminal that actually understands and executes commands.
 
-A shell typically provides:
+A terminal can run different shells, and a shell does not require a graphical terminal to run, since it can also operate over a remote connection or inside a script.
 
-- Command execution
-- Environment variables
-- Input and output redirection
-- Pipes
-- Command history
-- Aliases
-- Scripting capabilities
-- Job control
+### Common Shells
 
-### Environment Variables
+Several shells are commonly used on Linux and Unix systems. Each has its own behavior, features, and syntax, although they share many basic concepts.
 
-Environment variables store configuration values that programs can access.
+- sh: The original Unix shell specification. Many other shells aim to be compatible with it.
+- bash: The Bourne Again Shell. It is one of the most widely used shells and is the default on many Linux distributions.
+- zsh: A shell that extends sh-compatible features with additional customization options.
+- fish: A shell designed around user-friendly defaults, such as automatic suggestions.
+- ksh: The Korn Shell, which introduced several features later adopted by other shells.
 
-Example:
-
-```bash
-echo $HOME
-```
-
-This displays the home directory of the current User.
-
-### Pipes
-
-Pipes allow the output of one command to become the input of another command.
-
-Example:
-
-```bash
-ls -a | grep ".conf"
-```
-
-This sends the output of `ls` to `grep`.
-
-### Redirection
-
-Redirection changes where input or output is read from or written to.
-
-Example:
-
-```bash
-ls -a > files.txt
-```
-
-The command output is written into a file.
-
-:::tip
-
-Pipes and redirection are fundamental concepts that enable efficient command-line workflows.
-
-:::
-
-### Shell Scripts
-
-A shell script is a text file containing shell commands.
-
-Example:
-
-```bash
-#!/bin/bash
-
-echo "Hello World"
-```
-
-Scripts are commonly used for automation and system administration tasks.
+The choice of shell affects available features and minor syntax differences, but the fundamental concept of typing and executing commands remains the same across all of them.
 
 ## Examples
 
-### Determine the Current Shell
+The following examples show simple interactions with a shell. They are intentionally minimal, since the goal here is only to illustrate what a shell does.
+
+Checking the name of the current shell:
 
 ```bash
 echo $SHELL
 ```
 
-### Display Available Shells
+Running a basic command in the shell:
 
 ```bash
-cat /etc/shells
+pwd
 ```
 
-### Start a New Bash Session
-
-```bash
-bash
-```
-
-### Start a New Z Shell Session
-
-```bash
-zsh
-```
-
-### Create an Alias
-
-```bash
-alias ll='ls -al'
-```
-
-### Execute a Shell Script
-
-```bash
-chmod +x script.sh
-./script.sh
-```
+Each command typed at the prompt is read, interpreted, and executed by the shell.
 
 ## Common Pitfalls
 
-### Confusing the Terminal and the Shell
+- Assuming the terminal and the shell are the same thing. The terminal only displays text; the shell interprets commands.
+- Assuming all shells behave identically. Basic commands work similarly across shells, but scripting syntax can differ significantly.
+- Expecting shell scripting concepts, such as pipes or globbing, to be explained on this page. Those topics are covered in the Shell section.
 
-A terminal is the application used to interact with the shell.
+:::tip
 
-The shell is the program that interprets commands.
-
-### Assuming All Shells Behave the Same
-
-Different shells may support different syntax, features, and configuration files.
-
-For example:
-
-- Bash uses `.bashrc`
-- Zsh uses `.zshrc`
-
-### Overwriting Files with Redirection
-
-The following command replaces the contents of an existing file:
-
-```bash
-echo "data" > file.txt
-```
-
-:::warning
-
-Always verify redirection targets before executing commands that modify files.
-
-:::
-
-### Running Untrusted Shell Scripts
-
-Shell scripts can execute arbitrary commands.
-
-:::danger
-
-Never execute scripts from untrusted sources without reviewing their contents first.
+See the Shell section of this documentation for details on prompts, builtins, redirection, and other operational topics.
 
 :::
