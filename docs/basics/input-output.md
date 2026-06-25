@@ -139,7 +139,7 @@ Display only lines containing the word "error":
 cat system.log | grep error
 ```
 
-## Common Pitfalls ( Optional )
+## Common Pitfalls
 
 ### Confusing `stdout` and `stderr`
 
