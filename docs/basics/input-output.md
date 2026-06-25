@@ -7,81 +7,168 @@ sidebar_position: 11
 # Input and Output
 
 ## Overview
-Every command you run in a Unix-like system automatically opens three data channels (called streams):
-1. **Standart Input(stdin):** Where the program reads the data.
-- Example:
+
+Every program started on a Unix-like system automatically receives three data streams:
+
+1. **Standard Input (`stdin`)**  
+   The stream from which a program reads data.
+
+2. **Standard Output (`stdout`)**  
+   The stream used to send normal program output.
+
+3. **Standard Error (`stderr`)**  
+   The stream used to send error messages.
+
+Example:
+
 ```bash
-$ echo "Linux is Cool!"
-```
-2. **Standard Output (stdout):** The program send the normal data.
-- Example:
-```bash
-Linux is Cool!
+echo "Linux is cool"
 ```
 
-3. **Standard Error (stderr):** The program sends error-messages.
-- Example:
+Output:
+
+```text
+Linux is cool
+```
+
+If a command fails, the error message is typically written to `stderr`:
+
 ```bash
-fish: Unknown command: error
+invalidcommand
+```
+
+Output:
+
+```text
+fish: Unknown command: invalidcommand
 ```
 
 :::note
 
-Unix treats these streams as files. This means you can divert data to files or other programs.
+Unix treats these streams like files. Because of this, they can be redirected to files, devices, or other programs.
 
 :::
 
 ## Why It Matters
-Because almost every Unix tool uses these three standard streams. 
+
+Most Unix and Linux tools communicate through these three standard streams.
+
+Understanding how they work allows you to:
+
+- Save command output to files
+- Separate normal output from error messages
+- Read input from files instead of the keyboard
+- Connect multiple commands together using pipes
+- Build efficient command-line workflows
 
 ## Concept
 
-1. File Descriptors
+### File Descriptors
 
-Internally, the system tracks these streams using file descriptors(integer):
+Internally, Unix identifies the standard streams using file descriptors.
 
-    0 = Standard Input (stdin)
+| File Descriptor | Stream |
+|----------------|---------|
+| `0` | Standard Input (`stdin`) |
+| `1` | Standard Output (`stdout`) |
+| `2` | Standard Error (`stderr`) |
 
-    1 = Standard Output (stdout)
+### Redirection
 
-    2 = Standard Error (stderr)
+Redirection changes where a stream reads data from or writes data to.
 
-2. Redirection
+| Operator | Description |
+|-----------|-------------|
+| `>` | Redirect `stdout` and overwrite the target file |
+| `>>` | Redirect `stdout` and append to the target file |
+| `<` | Read input from a file instead of the keyboard |
+| `2>` | Redirect `stderr` |
+| `2>>` | Append `stderr` to a file |
 
-Redirection changes where a stream goes to or comes from (usually a file).
+### Pipes
 
-    > (Redirect Output): Overwrites a file with the program's stdout.
+The pipe operator (`|`) connects the `stdout` of one program directly to the `stdin` of another.
 
-    >> (Append Output): Appends stdout to the end of a file without erasing it.
+This allows multiple programs to process data in sequence.
 
-    < (Redirect Input): Forces a program to read from a file instead of the keyboard.
+:::tip
 
-    2> (Redirect Error): Explicitly redirects stderr instead of stdout.
-
-:::note
-
-The pipe operator (|) connects the stdout of one program directly to the stdin of another. Data flows through the pipe like water, allowing programs to process information sequentially.
+Pipes are one of the most powerful concepts in Unix because they allow small programs to work together as building blocks.
 
 :::
-## Examples
-**Write in a file:**
 
-```Bash
+## Examples
+
+### Redirect Output to a File
+
+Save the output of `<ls -l>` to a file:
+
+```bash
 ls -l > files.txt
 ```
 
-**Appending to a file:**
+### Append Output to a File
+
+Add a new line to an existing log file:
 
 ```bash
 echo "Process completed successfully" >> log.txt
 ```
 
-**Separating Errors from Output**
-Run a backup script, saving the normal report to success.log and any errors to errors.log:
-Bash
+### Redirect Input from a File
+
+Provide a file as input to a program:
+
+```bash
+sort < names.txt
+```
+
+### Separate Output and Errors
+
+Save normal output and error messages to different files:
 
 ```bash
 ./backup.sh > success.log 2> errors.log
 ```
-## Common Pitfalls ( Optional)
 
+### Combine Commands with a Pipe
+
+Display only lines containing the word "error":
+
+```bash
+cat system.log | grep error
+```
+
+## Common Pitfalls ( Optional )
+
+### Confusing `stdout` and `stderr`
+
+Not all output is written to the same stream.
+
+A command may appear to display everything in the terminal, but normal output and error messages are often sent through different streams.
+
+### Accidentally Overwriting Files
+
+The `>` operator replaces the entire contents of a file.
+
+:::warning
+
+Using `>` on an existing file permanently removes its previous contents.
+
+Use `>>` if you want to preserve existing data.
+
+:::
+
+### Expecting Pipes to Transfer Errors
+
+By default, pipes only forward `stdout`.
+
+Error messages sent to `stderr` do not pass through the pipe unless explicitly redirected.
+
+Example:
+
+```bash
+command 2>&1 | another-command
+```
+
+This redirects `stderr` to `stdout` before creating the pipe.
